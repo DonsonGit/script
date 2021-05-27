@@ -4,7 +4,12 @@ LOC=$(readlink -f "$0")
 DIR=$(dirname "$LOC")
 
 # wall paper
-bash $DIR/dwm-bg.sh
+while true
+do
+	bash $DIR/dwm-bg.sh
+	sleep 50m
+done &
+
 
 #touchpad scorll horization
 id=`xinput --list | grep "Touchpad" | cut -d '=' -f2 | cut -d '[' -f1`

@@ -1,7 +1,3 @@
 #!/bin/bash
 
-while true
-do
-	feh --recursive --randomize --bg-fill ~/Pictures/wallpapers
-	sleep 50m
-done &
+feh --recursive --randomize --bg-fill ~/Pictures/wallpapers
