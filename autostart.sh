@@ -11,7 +11,7 @@ do
 done &
 
 
-#touchpad scorll horization
+# touchpad scorll horization
 id=`xinput --list | grep "Touchpad" | cut -d '=' -f2 | cut -d '[' -f1`
 scroll_id=`xinput --list-props ${id} | grep "Two-Finger Scrolling" | cut -d '(' -f2 | cut -d ')' -f1`
 xinput --set-prop $id $scroll_id 1 1
@@ -19,6 +19,9 @@ xinput --set-prop $id $scroll_id 1 1
 # touchpad tap action
 tap_id=`xinput --list-props ${id} | grep "Tap Action" | cut -d '(' -f2 | cut -d ')' -f1`
 xinput --set-prop $id $tap_id 1 1 1 1 1 1
+
+# open bluetooth
+bluetooth on
 
 # more monitor
 # ./dwmbar-functions/dwm_monitor.sh
@@ -34,7 +37,6 @@ picom -b
 wmname LG3D
 
 xsetroot -name " initial wifi... "
-
 # networkmanager and dwm-status
 wifi_up=0
 while true
