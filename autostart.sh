@@ -20,6 +20,9 @@ xinput --set-prop $id $scroll_id 1 1
 tap_id=`xinput --list-props ${id} | grep "Tap Action" | cut -d '(' -f2 | cut -d ')' -f1`
 xinput --set-prop $id $tap_id 1 1 1 1 1 1
 
+# brightness
+bash $DIR/dwm-brightness.sh
+
 # open bluetooth
 bluetooth on
 
