@@ -55,3 +55,4 @@ do
 	sleep 3
 done &
 
+bash $DIR/dwm-fcixt5.sh
