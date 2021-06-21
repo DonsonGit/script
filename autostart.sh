@@ -27,6 +27,7 @@ done &
 
 # open bluetooth
 bluetooth on
+dunstify -u normal -a "Bluetooth" " Bluetooth on "
 
 # power manager
 xfce4-power-manager --daemon
@@ -37,19 +38,19 @@ picom -b
 # dwm window manager name tool
 wmname LG3D
 
-xsetroot -name " Initial WIFI... "
 # networkmanager and dwm-status
 wifi_up=0
 while true
 do
 	if (($wifi_up == 0)); then
+		dunstify -u normal -a "WIFI" " Initial WIFI... "
 		wifi_up=1
 		res=$(bash $DIR/dwmbar-functions/dwm_wifi.sh)
 		if (($res > 0));then 
-			xsetroot -name " WIFI connected failed!!! "
+			dunstify -u critical -a "WIFI" " WIFI connected failed "
 			sleep 10
 		fi
-		xsetroot -name " WIFI is connected "
+		dunstify -u normal -a "WIFI" " WIFI connected "
 	fi
 	bash $DIR/dwm-status-refresh.sh
 	sleep 3
