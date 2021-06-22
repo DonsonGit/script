@@ -95,7 +95,7 @@ vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
 vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
 
 #xsetroot -name "  💿 $(print_mem)M ⬇️ $vel_recv ⬆️ $vel_trans $(dwm_alsa) [ $(print_bat) ]$(show_record) $(print_date) "
-xsetroot -name "  [MEM $(print_mem)M] [DW $vel_recv] [UP $vel_trans] [$(dwm_alsa)] [ $(dwm_battery) ]$(show_record) $(print_date) "
+xsetroot -name " 〄$(print_mem)M ⇣$vel_recv ⇡$vel_trans ♪$(dwm_alsa) [⌻$(dwm_battery)] $(show_record) $(print_date) "
 # xsetroot -name "  💿 $(print_mem)M ⬇️ $vel_recv ⬆️ $vel_trans $(dwm_alsa)"
 
 # Update old values to perform new calculations
