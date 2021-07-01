@@ -1,3 +1,5 @@
 #!/bin/bash
 
-nmcli connection up hortor-vpn --ask
+nmcli connection up hortor-vpn
+
+./vpn-router.sh
