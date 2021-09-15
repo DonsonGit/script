@@ -39,21 +39,21 @@ picom -b
 wmname LG3D
 
 # networkmanager and dwm-status
-wifi_up=0
+# wifi_up=0
 while true
 do
-	if (($wifi_up == 0)); then
-		dunstify -u normal -a "WIFI" " Initial WIFI... "
-		wifi_up=1
-		res=$(bash $DIR/dwmbar-functions/dwm_wifi.sh)
-		if (($res > 0));then 
-			dunstify -u critical -a "WIFI" " WIFI connected failed "
-			sleep 10
-		fi
-		dunstify -u normal -a "WIFI" " WIFI connected "
-	fi
-	bash $DIR/dwm-status-refresh.sh
+	# if (($wifi_up == 0)); then
+		# dunstify -u normal -a "WIFI" " Initial WIFI... "
+		# wifi_up=1
+		# res=$(bash $DIR/dwmbar-functions/dwm_wifi.sh)
+		# if (($res > 0));then 
+			# dunstify -u critical -a "WIFI" " WIFI connected failed "
+			# sleep 10
+		# fi
+		# dunstify -u normal -a "WIFI" " WIFI connected "
+	# fi
 	sleep 3
+	bash $DIR/dwm-status-refresh.sh
 done &
 
 bash $DIR/dwm-fcixt5.sh
