@@ -2,4 +2,6 @@
 
 nmcli connection up hortor-vpn
 
-./vpn-router.sh
+if [ "$1" == "" ]; then
+	./vpn-router.sh
+fi
