@@ -56,5 +56,5 @@ do
 	bash $DIR/dwm-status-refresh.sh
 done &
 
-# sleep 5
-# bash $DIR/dwm-fcixt5.sh
+sleep 5
+bash $DIR/dwm-fcixt5.sh
