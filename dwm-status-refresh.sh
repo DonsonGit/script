@@ -94,8 +94,10 @@ get_bytes
 vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
 vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
 
+wifi=$(nmcli con show --active | grep wifi | awk '{print $1}')
+
 #xsetroot -name "  💿 $(print_mem)M ⬇️ $vel_recv ⬆️ $vel_trans $(dwm_alsa) [ $(print_bat) ]$(show_record) $(print_date) "
-xsetroot -name " 〄$(print_mem)M ⇣$vel_recv ⇡$vel_trans ♪$(dwm_alsa) [⌻$(dwm_battery)] $(show_record) $(print_date) "
+xsetroot -name "  $(print_mem)M  $wifi  $vel_recv  $vel_trans $(dwm_alsa) $(dwm_battery) $(print_date) "
 # xsetroot -name "  💿 $(print_mem)M ⬇️ $vel_recv ⬆️ $vel_trans $(dwm_alsa)"
 
 # Update old values to perform new calculations

@@ -21,13 +21,13 @@ dwm_alsa () {
         fi
     else
         if [ "$VOL" -eq 0 ]; then
-            printf "MUTE"
+            printf "婢"
         elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 33 ]; then
-            printf "VOL %s%%" "$VOL"
+            printf " %s%%" "$VOL"
         elif [ "$VOL" -gt 33 ] && [ "$VOL" -le 66 ]; then
-            printf "VOL %s%%" "$VOL"
+            printf "墳 %s%%" "$VOL"
         else
-            printf "VOL %s%%" "$VOL"
+            printf " %s%%" "$VOL"
         fi
     fi
     printf "%s\n" "$SEP2"

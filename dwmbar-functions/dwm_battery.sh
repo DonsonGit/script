@@ -6,13 +6,30 @@ dwm_battery() {
 
 	printf "%s" "$SEP1"
 	if [ "$IDENTIFIER" = "unicode" ]; then
-		if [ "$STATUS" = "Charging" ]; then
-			printf "CHG %s%% %s" "$CHARGE" "$STATUS"
-		else
-			printf "BAT %s%% %s" "$CHARGE" "$STATUS"
-		fi
+
+        if [ $CHARGE lt 100 ];then
+			printf "%s%% %s" "$CHARGE" "$STATUS"
+        fi
 	else
-		printf "BAT %s%% %s" "$CHARGE" "$STATUS"
+        if [ "$CHARGE" -lt 20 ];then
+			printf " %s%% %s" "$CHARGE"
+        elif [ "$CHARGE" -lt 30 ];then
+			printf " %s%% %s" "$CHARGE"
+        elif [ "$CHARGE" -lt 40 ];then
+			printf " %s%% %s" "$CHARGE"
+        elif [ "$CHARGE" -lt 50 ];then
+			printf " %s%% %s" "$CHARGE"
+        elif [ "$CHARGE" -lt 60 ];then
+			printf " %s%% %s" "$CHARGE"
+        elif [ "$CHARGE" -lt 70 ];then
+			printf " %s%% %s" "$CHARGE"
+        elif [ $CHARGE -lt 80 ];then
+			printf " %s%% %s" "$CHARGE"
+        elif [ $CHARGE -lt 90 ];then
+			printf " %s%% %s" "$CHARGE"
+        elif [ $CHARGE -lt 100 ];then
+			printf " %s%% %s" "$CHARGE"
+        fi
 	fi
 	printf "%s\n" "$SEP2"
 }
